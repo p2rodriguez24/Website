@@ -1,0 +1,96 @@
+<html>
+<head>
+<script language="javaScript">
+
+function guessing1()
+{
+	/* block comment
+	Write an algortihm to create guessing game.
+	Let the user know if the guess is too high or too low.
+	If they guess the number, alert this fact and tell them how many guesses
+	it took them to guess the number.
+	
+	1. generate a random number
+	2. prompt user to guess a number
+	3. loop while the guess does not = the number
+		- increase number of guesses
+	4. check if number guessed is too high or too low
+	5. prompt "too high" or " too low"
+	6. if correct, prompt "corrct" + number of guesses
+	*/
+	var usersGuess = -1;
+	var numOfGuesses = 0; // camel case
+	var rand = Math.random()*100
+	rand = rand +1;
+	rand = parseInt(rand);
+	
+	usersGuess = prompt("Enter a number between 1 and 100");
+	numOfGuesses++
+	alert(usersGuess);
+	while( usersGuess != rand ) // loop while the users answer is wrong.
+	{
+		if ( usersGuess < rand ) // users guess is too low
+		{
+			alert(+usersGuess+" is too low")
+		}
+		
+		else if ( usersGuess > rand ) // users guess is too low
+		{
+			alert(+usersGuess+" is too high")
+		}
+		usersGuess = prompt("Enter a new number between 1 and 100");
+		numOfGuesses++
+		
+	}
+	if(usersGuess == rand)
+	{
+		alert("Correct! You took "+numOfGuesses+" guesses");
+	}
+}
+
+function greeting1()
+{
+	alert("Hello there.")// "hello there." is a parameter.
+
+}// end of greeting1()
+
+function greeting2()
+{
+	// = is the assignment operator.
+	// assignment stores what's on the right side into the element on the left.
+	var name = prompt("Type your name")// "Type your name" is a parameter.
+	alert("Greetings, "+name);
+}// end of greeting2()
+
+function greeting3()
+{
+	var answer = confirm("Do you want to play again");
+	alert(answer);
+
+}// end of greeting3
+</script>
+</head>
+<body background="images/bkgnd2.gif">
+
+<font color="black" face="Comic Sans MS" />
+
+<h1>My First JavaScript Page</h1>
+
+Click here to <a href="index.html">return to my home page.</a> <br/><br/>
+
+<img src="images/guessingGame.png" width="300"/><br/>
+<br/>
+
+<input type="button" value="Play my guessing game" onclick="guessing1()"/><br/>
+
+<hr/>
+<input type="button" value="Click me" onclick="greeting1()"/><br/>
+
+<hr/>
+<input type="button" value="Click to enter your name" onclick="greeting2()"/><br/>
+
+<hr/>
+<input type="button" value="Click one more time" onclick="greeting3()"/><br/>
+
+</body>
+</html>
